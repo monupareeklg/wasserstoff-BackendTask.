@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "name": "mock_apis",
+  "version": "1.0.0",
+  "description": "Simple mock api's for testing the loadbalancer",
+  "main": "rest.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monupareeklg/wasserstoff-BackendTask..git"
+  },
+  "author": "love pareek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monupareeklg/wasserstoff-BackendTask./issues"
+  },
+  "homepage": "https://github.com/monupareeklg/wasserstoff-BackendTask.#readme"
+}

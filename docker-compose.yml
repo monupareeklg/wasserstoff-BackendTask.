@@ -1,0 +1,67 @@
+version: '3'
+
+services:
+  load_balancer:
+    build: .
+    ports:
+      - "3000:3000"
+      - "3005:3005"
+    depends_on:
+      - mock_rest_1
+      - mock_rest_2
+      - mock_rest_3
+      - mock_rest_4
+    networks:
+      - app-network
+
+  mock_rest_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node mock_apis/rest.js
+    environment:
+      - PORT=3001
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+
+  mock_rest_2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node mock_apis/rest.js
+    environment:
+      - PORT=3002
+    ports:
+      - "3002:3002"
+    networks:
+      - app-network
+
+  mock_rest_3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node mock_apis/rest.js
+    environment:
+      - PORT=3003
+    ports:
+      - "3003:3003"
+    networks:
+      - app-network
+
+  mock_rest_4:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node mock_apis/rest.js
+    environment:
+      - PORT=3004
+    ports:
+      - "3004:3004"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
